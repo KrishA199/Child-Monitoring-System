@@ -13,7 +13,7 @@ class DatabaseManger{
     let SERVER_URL = "https://api.backendless.com"
     let backendless = Backendless.sharedInstance()!
     
-    
+    //
     init(){
         backendless.hostURL = SERVER_URL
         backendless.initApp(APPLICATION_ID, apiKey:API_KEY)
@@ -25,52 +25,78 @@ class DatabaseManger{
         let user = BackendlessUser()
         user.setProperty("email", object: userEmail)
         user.password = userPassword as NSString
-        self.backendless.userService.register(user,
-                                              response: {
-                                                (registeredUser : BackendlessUser?) -> Void in
-                                                print("User registered \(String(describing: registeredUser?.value(forKey: "email")))")
-                                                hasRegistered = true
-                                                
-        },
-                                              error: {
-                                                (fault : Fault?) -> Void in
-                                                print("Server reported an error: \(String(describing: fault?.description))")
-                                                hasRegistered = false
+//        self.backendless.userService.register(user,
+//                                              response: {
+//                                                (registeredUser : BackendlessUser?) -> Void in
+//                                                print("User registered \(String(describing: registeredUser?.value(forKey: "email")))")
+//                                                hasRegistered = true
+//
+//        },
+//                                              error: {
+//                                                (fault : Fault?) -> Void in
+//                                                print("Server reported an error: \(String(describing: fault?.description))")
+//                                                hasRegistered = false
+//        })
+        Types.tryblock({() -> Void in
+            self.backendless.userService.register(user)
+            hasRegistered = true
+        }, catchblock: {(exception)->Void in
+            print(exception)
+            hasRegistered = false
         })
        return hasRegistered
     }
     func loginUser (userEmail : String , userPassword : String )  -> Bool {
         var isLoggedIn : Bool = false
-        self.backendless.userService.login(userEmail,
-                                           password: userPassword,
-                                           response: {
-                                            (loggedUser : BackendlessUser?) -> Void in
-                                            isLoggedIn = true
-                                            print("Logged In Succesfull")
-                                            isLoggedIn = true
+//        self.backendless.userService.login(userEmail,
+//                                           password: userPassword,
+//                                           response: {
+//                                            (loggedUser : BackendlessUser?) -> Void in
+//                                            isLoggedIn = true
+//                                            print("Logged In Succesfull")
+//                                            isLoggedIn = true
+//        },
+//                                           error: {
+//                                            (fault : Fault?) -> Void in
+//                                            isLoggedIn = false
+//        })
+        Types.tryblock({ () -> Void in
+           
+            self.backendless.userService.login(userEmail, password: userPassword)
+            
+            isLoggedIn = true
+            
+            
         },
-                                           error: {
-                                            (fault : Fault?) -> Void in
-                                            isLoggedIn = false
+                       catchblock: { (exception) -> Void in
+                        isLoggedIn = false
+                        
         })
-//        let bku = backendless.userService.login(userEmail, password: userPassword)
-//        print(bku!.description)
+        
         
         return isLoggedIn
     }
     func forgotPassword(emailID : String) -> Bool {
         var hasSentMail : Bool = false
-        self.backendless.userService.restorePassword(emailID,
-                                                     response: {
-                                                        (result : Any) -> Void in
-                                                        print("Please check your email inbox to reset your password")
-                                                    hasSentMail = true
-        },
-                                                     error: {
-                                                        (fault : Fault?) -> Void in
-                                                        print("Server reported an error: \(String(describing: fault?.description))")
-                                                        hasSentMail = false
-        })
+//        self.backendless.userService.restorePassword(emailID,
+//                                                     response: {
+//                                                        (result : Any) -> Void in
+//                                                        print("Please check your email inbox to reset your password")
+//                                                    hasSentMail = true
+//        },
+//                                                     error: {
+//                                                        (fault : Fault?) -> Void in
+//                                                        print("Server reported an error: \(String(describing: fault?.description))")
+//                                                        hasSentMail = false
+//        })
+        Types.tryblock({()-> Void in
+            self.backendless.userService.restorePassword(emailID)
+            hasSentMail = true
+        }, catchblock: {(exception)->Void in
+            hasSentMail = false
+        }
+            
+        )
         return hasSentMail
     }
 }

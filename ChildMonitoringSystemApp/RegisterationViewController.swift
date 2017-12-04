@@ -8,7 +8,7 @@
 import UIKit
 
 class RegisterationViewController: UIViewController {
-
+    let databaseManagerInstance : DatabaseManger = DatabaseManger()
     @IBOutlet weak var firstNameTF: UITextField!
     @IBOutlet weak var lastNameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
@@ -21,6 +21,26 @@ class RegisterationViewController: UIViewController {
     }
 
     @IBAction func registerBTN(_ sender: Any) {
+        if shouldPerformSegue(withIdentifier: "registerSegue", sender: self){
+            performSegue(withIdentifier: "registerSegue", sender: self)
+        }
+        else {
+            let alertController = UIAlertController(title: "Message", message: "Please check the password or email that you have entered", preferredStyle: .alert)
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "registerSegue" && passwordTF.text! == reEnterPasswordTF.text!{
+        
+        return databaseManagerInstance.registerUser(userEmail: emailTF.text!, userPassword: passwordTF.text!)
+        }
+        else {
+            return false
+        }
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination as? RegistrationThankYouViewController
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

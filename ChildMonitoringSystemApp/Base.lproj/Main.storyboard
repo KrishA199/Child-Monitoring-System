@@ -68,11 +68,17 @@
                                 <rect key="frame" x="95" y="342" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Forgot Password??"/>
+                                <connections>
+                                    <action selector="forgotPasswordBTN:" destination="7SU-Rf-nNU" eventType="touchUpInside" id="xi9-2i-90r"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Mj-ja-sFa">
                                 <rect key="frame" x="68" y="385" width="185" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="New User ? Register Here!!"/>
+                                <connections>
+                                    <action selector="newUserRegistraionBTN:" destination="7SU-Rf-nNU" eventType="touchUpInside" id="1jg-su-Tdx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hC-Lc-0v3">
                                 <rect key="frame" x="161" y="90" width="53" height="26"/>
@@ -88,11 +94,13 @@
                         <outlet property="emailTF" destination="t9V-RB-6xJ" id="P3r-rX-KLZ"/>
                         <outlet property="passwordTF" destination="kLp-Nd-RJp" id="txw-dE-XWZ"/>
                         <segue destination="yE4-VZ-w7o" kind="show" identifier="loginSegue" id="bsV-wz-Q0s"/>
+                        <segue destination="SZ5-G7-Ske" kind="show" identifier="registerationSegue" id="mvK-oq-d1W"/>
+                        <segue destination="2TZ-HV-4Jk" kind="show" identifier="forgotPassSegue" id="q5x-bu-kJp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SbT-uB-Dd8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="159.19999999999999" y="79.610194902548727"/>
+            <point key="canvasLocation" x="-314" y="45"/>
         </scene>
         <!--Add Child View Controller-->
         <scene sceneID="5cF-aR-CXv">
@@ -119,7 +127,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yLd-aT-3wO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="956" y="73.313343328335833"/>
+            <point key="canvasLocation" x="841" y="45"/>
         </scene>
         <!--Forgot Password View Controller-->
         <scene sceneID="9dZ-iR-pj1">
@@ -162,21 +170,30 @@
                                     <action selector="resetPasswordBTN:" destination="2TZ-HV-4Jk" eventType="touchUpInside" id="H0r-9S-iZj"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ic3-5J-SX5">
+                                <rect key="frame" x="68" y="293" width="206" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Click here to go to home page"/>
+                                <connections>
+                                    <segue destination="7SU-Rf-nNU" kind="show" id="XD1-Nw-lnB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="emailIDTF" destination="40Z-jU-RGz" id="wPG-sz-0CZ"/>
+                        <segue destination="TKE-WV-Qfq" kind="show" identifier="verificationMessageSegue" id="JXJ-oN-x5m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCF-aa-Ldt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-580" y="841.52923538230891"/>
         </scene>
-        <!--View Controller-->
+        <!--Verification Message View Controller-->
         <scene sceneID="Cen-fw-ZBy">
             <objects>
-                <viewController id="TKE-WV-Qfq" sceneMemberID="viewController">
+                <viewController id="TKE-WV-Qfq" customClass="VerificationMessageViewController" customModule="ChildMonitoringSystemApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6qJ-bX-Frh"/>
                         <viewControllerLayoutGuide type="bottom" id="493-ti-UOS"/>
@@ -204,7 +221,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Click here to go to home page"/>
                                 <connections>
-                                    <segue destination="7SU-Rf-nNU" kind="show" id="bPb-z5-qyg"/>
+                                    <segue destination="7SU-Rf-nNU" kind="show" id="jvv-0q-chp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,7 +230,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVy-nx-HIU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="1530.5847076461771"/>
+            <point key="canvasLocation" x="-580" y="1558"/>
         </scene>
         <!--Registeration View Controller-->
         <scene sceneID="Ycg-Qh-dvt">
@@ -305,6 +322,14 @@
                                     <action selector="registerBTN:" destination="SZ5-G7-Ske" eventType="touchUpInside" id="T0e-we-P19"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-ZL-S3g">
+                                <rect key="frame" x="84" y="471" width="206" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Click here to go to home page"/>
+                                <connections>
+                                    <segue destination="7SU-Rf-nNU" kind="show" id="xsx-wp-vlB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -314,6 +339,7 @@
                         <outlet property="lastNameTF" destination="Lye-Xs-kYG" id="Dee-5d-Enl"/>
                         <outlet property="passwordTF" destination="gf1-y4-mE4" id="WA7-it-bBA"/>
                         <outlet property="reEnterPasswordTF" destination="uFb-6k-1NI" id="JnE-ce-sVd"/>
+                        <segue destination="Tlt-59-hon" kind="show" identifier="registerSegue" id="EV8-Ew-JXc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEZ-Du-AE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -353,14 +379,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-ZL-S3g">
-                                <rect key="frame" x="83" y="335" width="206" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Click here to go to home page"/>
-                                <connections>
-                                    <segue destination="7SU-Rf-nNU" kind="show" id="Pwf-WJ-TQy"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
@@ -371,6 +389,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bPb-z5-qyg"/>
+        <segue reference="xsx-wp-vlB"/>
     </inferredMetricsTieBreakers>
 </document>

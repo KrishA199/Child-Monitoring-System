@@ -1,24 +1,40 @@
  import UIKit
 
 class ViewController: UIViewController {
-    let DatabaseMangerInstance = DatabaseManger()
+    let databaseMangerInstance = DatabaseManger()
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
  
+    @IBAction func forgotPasswordBTN(_ sender: Any) {
+        if shouldPerformSegue(withIdentifier: "forgotPassSegue", sender: self){
+            performSegue(withIdentifier: "forgotPassSegue", sender: self)
+        }
+    }
+    @IBAction func newUserRegistraionBTN(_ sender: Any) {
+         if shouldPerformSegue(withIdentifier: "registerationSegue", sender: self){
+            performSegue(withIdentifier: "registerationSegue", sender: self)
+        }
+    }
     @IBAction func loginBTN(_ sender: Any) {
-        let doSegue : Bool = shouldPerformSegue(withIdentifier: "loginSegue", sender: self)
-        if doSegue {
+        
+        if shouldPerformSegue(withIdentifier: "loginSegue", sender: self) {
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
         else {
-            let alertController = UIAlertController(title: "Message", message: "Login sucessfull", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Message", message: "Login unsucessfull", preferredStyle: .alert)
            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
              self.present(alertController, animated: true, completion: nil)
         }
     }
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "loginSegue" {
+            return databaseMangerInstance.loginUser(userEmail: emailTF.text!, userPassword: passwordTF.text!)
+        }
+        else if identifier == "registerationSegue"{
+            return true
+        }
+        else if identifier == "forgotPassSegue" {
             return true
         }
         else {
@@ -26,7 +42,15 @@ class ViewController: UIViewController {
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        segue.destination as? AddChildViewController
+        if segue.identifier == "loginSegue"{
+            _ = segue.destination as? AddChildViewController
+        }
+        else if segue.identifier == "registerationSegue" {
+           _ =  segue.destination as? RegisterationViewController
+        }
+        else if segue.identifier == "forgotPassSegue" {
+            _ = segue.destination as? ForgotPasswordViewController
+        }
     }
     //    @IBAction func loginBTN(_ sender: Any) {
 //        if let emailID = emailTF.text , let pass = passwordTF.text {
