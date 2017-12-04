@@ -16,12 +16,17 @@ class ForgotPasswordViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func homePageBTN(_ sender: Any) {
+        if shouldPerformSegue(withIdentifier: "loginSegue", sender: self) {
+            performSegue(withIdentifier: "loginSegue", sender: self)
+        }
+    }
     @IBAction func resetPasswordBTN(_ sender: Any) {
         if shouldPerformSegue(withIdentifier: "verificationMessageSegue", sender: self){
         performSegue(withIdentifier: "verificationMessageSegue", sender: self)
         }
         else {
-            let alertController = UIAlertController(title: "Message", message: "Enter a valid email.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Message", message: databaseManagerInstance.faultMessage, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
@@ -31,12 +36,22 @@ class ForgotPasswordViewController: UIViewController {
             return databaseManagerInstance.forgotPassword(emailID: emailIDTF.text!)
             
         }
+        else if identifier == "loginSegue" {
+            
+            return true
+        }
         else {
             return false
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        segue.destination as? VerificationMessageViewController
+        if segue.identifier == "verificationMessageSegue"{
+        _ = segue.destination as? VerificationMessageViewController
+        }
+        else if segue.identifier == "loginSegue"{
+            print("Over here")
+            _ = segue.destination as? ViewController
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

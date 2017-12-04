@@ -175,7 +175,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Click here to go to home page"/>
                                 <connections>
-                                    <segue destination="7SU-Rf-nNU" kind="show" id="XD1-Nw-lnB"/>
+                                    <action selector="homePageBTN:" destination="2TZ-HV-4Jk" eventType="touchUpInside" id="3Cp-z0-CnI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -184,6 +184,7 @@
                     <connections>
                         <outlet property="emailIDTF" destination="40Z-jU-RGz" id="wPG-sz-0CZ"/>
                         <segue destination="TKE-WV-Qfq" kind="show" identifier="verificationMessageSegue" id="JXJ-oN-x5m"/>
+                        <segue destination="7SU-Rf-nNU" kind="show" identifier="loginSegue" id="IoZ-rh-Uyg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCF-aa-Ldt" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,11 +324,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNd-ZL-S3g">
-                                <rect key="frame" x="84" y="471" width="206" height="30"/>
+                                <rect key="frame" x="122" y="471" width="130" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Click here to go to home page"/>
+                                <state key="normal" title="Have an account??"/>
                                 <connections>
-                                    <segue destination="7SU-Rf-nNU" kind="show" id="xsx-wp-vlB"/>
+                                    <action selector="toHomePage:" destination="SZ5-G7-Ske" eventType="touchUpInside" id="XRU-86-xOz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -340,6 +341,7 @@
                         <outlet property="passwordTF" destination="gf1-y4-mE4" id="WA7-it-bBA"/>
                         <outlet property="reEnterPasswordTF" destination="uFb-6k-1NI" id="JnE-ce-sVd"/>
                         <segue destination="Tlt-59-hon" kind="show" identifier="registerSegue" id="EV8-Ew-JXc"/>
+                        <segue destination="7SU-Rf-nNU" kind="show" identifier="loginSegue" id="xx9-Do-h30"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SEZ-Du-AE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,6 +391,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xsx-wp-vlB"/>
+        <segue reference="xx9-Do-h30"/>
     </inferredMetricsTieBreakers>
 </document>

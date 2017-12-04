@@ -22,7 +22,7 @@ class ViewController: UIViewController {
             performSegue(withIdentifier: "loginSegue", sender: self)
         }
         else {
-            let alertController = UIAlertController(title: "Message", message: "Login unsucessfull", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Message", message: databaseMangerInstance.faultMessage, preferredStyle: .alert)
            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
              self.present(alertController, animated: true, completion: nil)
         }
@@ -52,59 +52,6 @@ class ViewController: UIViewController {
             _ = segue.destination as? ForgotPasswordViewController
         }
     }
-    //    @IBAction func loginBTN(_ sender: Any) {
-//        if let emailID = emailTF.text , let pass = passwordTF.text {
-//            let validLogin = DatabaseMangerInstance.loginUser(userEmail: emailID, userPassword: pass)
-//            print(validLogin)
-//            if validLogin {
-//                let alertController = UIAlertController(title: "Message", message: "Login sucessfull", preferredStyle: .alert)
-//                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//                self.present(alertController, animated: true, completion: nil)
-//            }
-//            else {
-//                //When user not registered in database
-//            }
-//        }
-//        else {
-//            let alertController = UIAlertController(title: "Warning message", message: "Enter a valid input.", preferredStyle: .alert)
-//            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-//
-//    }
-//    @IBAction func registerBTN(_ sender: Any) {
-//        if let emailID = emailTF.text , let pass = passwordTF.text {
-//            let hasRegistered = DatabaseMangerInstance.registerUser(userEmail: emailID, userPassword: pass)
-//            print(hasRegistered)
-//            if hasRegistered {
-//                let alertController = UIAlertController(title: "Message", message: "Sucessfully registered.", preferredStyle: .alert)
-//                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//                self.present(alertController, animated: true, completion: nil)
-//            }
-//            else {
-//                //When user not registered in database
-//            }
-//        }
-//        else {
-//       let alertController = UIAlertController(title: "Warning message", message: "Enter a valid input.", preferredStyle: .alert)
-//            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//            self.present(alertController, animated: true, completion: nil)
-//        }
-//    }
-//    @IBAction func forgotPasswordBTN(_ sender: Any) {
-//        if let emailID = emailTF.text {
-//            let isValidEmail = DatabaseMangerInstance.forgotPassword(emailID: emailID)
-//            if isValidEmail {
-//                let alertController = UIAlertController(title: "Warning message", message: "Enter a valid email.", preferredStyle: .alert)
-//                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-//                self.present(alertController, animated: true, completion: nil)
-//            }
-//            else {
-//                //When the email given is not present in database
-//            }
-//        }
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        // Do any additional setup after loading the view, typically from a nib.

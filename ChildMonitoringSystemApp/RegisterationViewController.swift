@@ -20,12 +20,18 @@ class RegisterationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func toHomePage(_ sender: Any) {
+        if shouldPerformSegue(withIdentifier: "loginSegue", sender: self) {
+            performSegue(withIdentifier: "loginSegue", sender: self)
+        }
+    }
     @IBAction func registerBTN(_ sender: Any) {
+    
         if shouldPerformSegue(withIdentifier: "registerSegue", sender: self){
             performSegue(withIdentifier: "registerSegue", sender: self)
         }
         else {
-            let alertController = UIAlertController(title: "Message", message: "Please check the password or email that you have entered", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "Message", message: "hello", preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
             self.present(alertController, animated: true, completion: nil)
         }
@@ -35,13 +41,21 @@ class RegisterationViewController: UIViewController {
         
         return databaseManagerInstance.registerUser(userEmail: emailTF.text!, userPassword: passwordTF.text!)
         }
+        if identifier == "loginSegue" {
+            return true
+        }
         else {
             return false
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        segue.destination as? RegistrationThankYouViewController
-    }
+        if segue.identifier == "registerSegue" {
+        _ = segue.destination as? RegistrationThankYouViewController
+        }
+        else {
+            _ = segue.destination as? ViewController
+        }
+        }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
