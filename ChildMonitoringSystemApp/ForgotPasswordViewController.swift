@@ -2,7 +2,7 @@
 //  ForgotPasswordViewController.swift
 //  ChildMonitoringSystemApp
 //
-//  Created by Mucherla,Veera Kishon Kumar on 12/2/17.
+//  Created by Koushik and Unnathi on 12/2/17.
 //
 
 import UIKit

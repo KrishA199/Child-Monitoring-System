@@ -1,4 +1,11 @@
- import UIKit
+//
+//  AddChildViewController.swift
+//  ChildMonitoringSystemApp
+//
+//  Created by Prarhiba , Alekhya and Reshma on 12/2/17.
+//
+
+import UIKit
 
 class ViewController: UIViewController {
     let databaseMangerInstance = DatabaseManger()

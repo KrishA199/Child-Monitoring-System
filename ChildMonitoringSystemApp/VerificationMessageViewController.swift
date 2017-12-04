@@ -2,7 +2,7 @@
 //  VerificationMessageViewController.swift
 //  ChildMonitoringSystemApp
 //
-//  Created by Karthik Laddipeerla on 12/2/17.
+//  Created by Reshma on 12/2/17.
 //
 
 import UIKit
