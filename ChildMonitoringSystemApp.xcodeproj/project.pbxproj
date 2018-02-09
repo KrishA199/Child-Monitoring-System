@@ -12,6 +12,10 @@
 		0F22E1B41E8407D1004B722A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F22E1B21E8407D1004B722A /* Main.storyboard */; };
 		0F22E1B61E8407D1004B722A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F22E1B51E8407D1004B722A /* Assets.xcassets */; };
 		0F22E1B91E8407D1004B722A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F22E1B71E8407D1004B722A /* LaunchScreen.storyboard */; };
+		3F7048E4202D3F16005DFBE1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7048E3202D3F16005DFBE1 /* HomeViewController.swift */; };
+		3F7048E6202D3F2E005DFBE1 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7048E5202D3F2E005DFBE1 /* RegisterViewController.swift */; };
+		3F7048E8202D3F51005DFBE1 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7048E7202D3F51005DFBE1 /* ResetPasswordViewController.swift */; };
+		3F7048EE202D4052005DFBE1 /* AddChildTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7048ED202D4052005DFBE1 /* AddChildTableViewController.swift */; };
 		6F52E4071FD3763E00532993 /* RegistrationThankYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E4061FD3763E00532993 /* RegistrationThankYouViewController.swift */; };
 		6F52E4091FD3827300532993 /* VerificationMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F52E4081FD3827300532993 /* VerificationMessageViewController.swift */; };
 		6FC1CC721FD2916300F1B27B /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC1CC711FD2916300F1B27B /* DatabaseManager.swift */; };
@@ -29,6 +33,10 @@
 		0F22E1B51E8407D1004B722A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F22E1B81E8407D1004B722A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F22E1BA1E8407D1004B722A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7048E3202D3F16005DFBE1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		3F7048E5202D3F2E005DFBE1 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3F7048E7202D3F51005DFBE1 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		3F7048ED202D4052005DFBE1 /* AddChildTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildTableViewController.swift; sourceTree = "<group>"; };
 		6F52E4061FD3763E00532993 /* RegistrationThankYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationThankYouViewController.swift; sourceTree = "<group>"; };
 		6F52E4081FD3827300532993 /* VerificationMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationMessageViewController.swift; sourceTree = "<group>"; };
 		6FC1CC711FD2916300F1B27B /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
@@ -85,6 +93,10 @@
 				0F22E1B51E8407D1004B722A /* Assets.xcassets */,
 				0F22E1B71E8407D1004B722A /* LaunchScreen.storyboard */,
 				0F22E1BA1E8407D1004B722A /* Info.plist */,
+				3F7048E3202D3F16005DFBE1 /* HomeViewController.swift */,
+				3F7048E5202D3F2E005DFBE1 /* RegisterViewController.swift */,
+				3F7048E7202D3F51005DFBE1 /* ResetPasswordViewController.swift */,
+				3F7048ED202D4052005DFBE1 /* AddChildTableViewController.swift */,
 			);
 			path = ChildMonitoringSystemApp;
 			sourceTree = "<group>";
@@ -233,10 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F52E4071FD3763E00532993 /* RegistrationThankYouViewController.swift in Sources */,
+				3F7048E6202D3F2E005DFBE1 /* RegisterViewController.swift in Sources */,
 				6F52E4091FD3827300532993 /* VerificationMessageViewController.swift in Sources */,
+				3F7048E8202D3F51005DFBE1 /* ResetPasswordViewController.swift in Sources */,
+				3F7048EE202D4052005DFBE1 /* AddChildTableViewController.swift in Sources */,
 				0F22E1B11E8407D1004B722A /* ViewController.swift in Sources */,
 				9C2B917C1FD353A9003A36E3 /* AddChildViewController.swift in Sources */,
 				9C2B917A1FD349F0003A36E3 /* ForgotPasswordViewController.swift in Sources */,
+				3F7048E4202D3F16005DFBE1 /* HomeViewController.swift in Sources */,
 				9C2B91781FD349C5003A36E3 /* RegisterationViewController.swift in Sources */,
 				0F22E1AF1E8407D1004B722A /* AppDelegate.swift in Sources */,
 				6FC1CC721FD2916300F1B27B /* DatabaseManager.swift in Sources */,
