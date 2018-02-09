@@ -10,6 +10,8 @@ import UIKit
 class AddChildTableViewController: UITableViewController {
 
     override func viewDidLoad() {
+        self.navigationItem.setHidesBackButton(true, animated:true);
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .plain, target: self, action: #selector(addTapped))
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -35,7 +37,9 @@ class AddChildTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
+    @IBAction func addTapped(_ sender: UIButton) {
+        
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

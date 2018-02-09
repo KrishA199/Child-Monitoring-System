@@ -24,16 +24,17 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func loginBTN(_ sender: UIButton) {
-        if HomeViewController.databaseManagerInstance.loginUser(userEmail: emailOrUserNameTF.text!, userPassword: passwordTF.text!) {
-            performSegue(withIdentifier: "loginSegue", sender: self)
-            
-        }
-        else {
-            print("Hello")
-            let alertController = UIAlertController(title: "Message", message: HomeViewController.databaseManagerInstance.faultMessage, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
-            self.present(alertController, animated: true, completion: nil)
-        }
+         performSegue(withIdentifier: "loginSegue", sender: self)
+//        if HomeViewController.databaseManagerInstance.loginUser(userEmail: emailOrUserNameTF.text!, userPassword: passwordTF.text!) {
+//            performSegue(withIdentifier: "loginSegue", sender: self)
+//
+//        }
+//        else {
+//            print("Hello")
+//            let alertController = UIAlertController(title: "Message", message: HomeViewController.databaseManagerInstance.faultMessage, preferredStyle: .alert)
+//            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+//            self.present(alertController, animated: true, completion: nil)
+//        }
     }
     @IBAction func forgotPasswordBTN(_ sender: UIButton) {
         performSegue(withIdentifier: "resetSegue", sender: self)
